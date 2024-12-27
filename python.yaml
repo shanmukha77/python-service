@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-java-app-deployment
-  namespace: uat
+  name: my-python-app-deployment
+  namespace: dev
   labels:
-    app: my-java-app
+    app: my-python-app
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: my-java-app
+      app: my-python-app
   template:
     metadata:
       labels:
-        app: my-java-app
+        app: my-python-app
     spec:
       containers:
-      - name: my-java-app
-        image: backendservices151.azurecr.io/java/java-v1:latest  # Your image path
+      - name: my-python-app
+        image: backendservices151.azurecr.io/python/python-v1:latest  # Your image path
         ports:
         - containerPort: 8080
       imagePullSecrets:
